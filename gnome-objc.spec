@@ -16,7 +16,6 @@ BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 
-%define		_prefix		/usr/X11R6
 
 %description
 Basic libraries you must have installed to use GNOME programs that are
