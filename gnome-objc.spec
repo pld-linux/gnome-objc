@@ -2,7 +2,7 @@ Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
-Release:	7
+Release:	8
 License:	LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-objc/%{name}-%{version}.tar.gz
@@ -64,6 +64,7 @@ Biblioteki statyczne do Objective C GNOME.
 
 %build
 OBJC="%{__cc}"; export OBJC
+install /usr/share/automake/config.* .
 gettextize --copy --force
 aclocal -I macros
 %configure2_13
