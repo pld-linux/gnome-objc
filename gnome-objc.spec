@@ -91,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 - added using %%{name} and %%{version} in Source,
 - added static subpackage,
 - added "Requires: gnome-libs >= %%{version}" to main package,
-- changeded dependences to "Requires: %%{name} = %%{version}" in devel
+- changed dependencies to "Requires: %%{name} = %%{version}" in devel
   subpackage,
 - added %lang macros for .mo foles,
 - added striping shared libraries,
