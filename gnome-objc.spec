@@ -1,7 +1,7 @@
 Summary:     GNOME Objective C libraries
 Name:        gnome-objc
 Version:     0.27
-Release:     1
+Release:     2
 Copyright:   LGPL
 Group:       X11/gnome
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
@@ -38,21 +38,18 @@ Static libraries to develop Objective C GNOME applications.
 %setup -q
 
 %build
-# Needed for snapshot releases.
-if [ ! -f configure ]; then
-  CFLAGS="$RPM_OPT_FLAGS" ./autogen.sh --prefix=/usr
-else
-  CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
-fi
-
+CFLAGS="$RPM_OPT_FLAGS" ./configure \
+	--prefix=/usr/X11R6
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT/usr install
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	gnulocaledir=$RPM_BUILD_ROOT/usr/X11R6/share/locale
 
-strip $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
+strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,23 +60,27 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644, root, root, 755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755, root, root) /usr/lib/lib*.so.*.*
-%lang(es) /usr/share/locale/es/LC_MESSAGES/gnome-objc.mo
-%lang(fr) /usr/share/locale/fr/LC_MESSAGES/gnome-objc.mo
-%lang(it) /usr/share/locale/it/LC_MESSAGES/gnome-objc.mo
-%lang(no) /usr/share/locale/no/LC_MESSAGES/gnome-objc.mo
-%lang(pt) /usr/share/locale/pt/LC_MESSAGES/gnome-objc.mo
+%attr(755, root, root) /usr/X11R6/lib/lib*.so.*.*
+%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-objc.mo
+%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-objc.mo
+%lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/gnome-objc.mo
+%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gnome-objc.mo
+%lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/gnome-objc.mo
 
 %files devel
 %defattr(644, root, root, 755)
-/usr/lib/lib*.so
-/usr/lib/*.sh
-/usr/include/*
+/usr/X11R6/lib/lib*.so
+/usr/X11R6/lib/*.sh
+/usr/X11R6/include/*
 
 %files static
-/usr/lib/lib*.a
+/usr/X11R6/lib/lib*.a
 
 %changelog
+* Fri Sep 18 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.27-2]
+- changed prefix to /usr/X11R6.
+
 * Mon Aug 24 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.27-1]
 - added -q %setup parameter,
