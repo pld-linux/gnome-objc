@@ -10,7 +10,8 @@ Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/%{name}-%{version}.tar
 Patch0:		gnome-objc-DESTDIR.patch
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
-Requires:	gnome-libs = 0.99.2
+Requires:	gtk+ = 1.2.1
+Requires:	gnome-libs = 1.0.5
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
 
