@@ -6,6 +6,7 @@ Release:	8
 License:	LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/1.0/%{name}-%{version}.tar.gz
+# Source0-md5:	5128635f4d8d143e5f9b4646456b3025
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
 Requires:	gtk+ >= 1.2.1
