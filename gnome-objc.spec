@@ -2,10 +2,11 @@ Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
-Release:	3
+Release:	4
 License:	LGPL
-Group:		X11/GNOME
-Group(pl):	X11/GNOME
+Group:		X11/Applications
+Group(de):	X11/Applikationen
+Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/%{name}-%{version}.tar.gz
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
@@ -34,8 +35,9 @@ Uczyni z twojego komputera maszynê ³atw± i przyjemn± w obs³udze.
 %package devel
 Summary:	Header filesc, etc to develop Objective C GNOME applications
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do Objective C GNOME
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -49,8 +51,9 @@ samemu tworzyæ aplikacje GNOME z u¿yciem Objective C.
 %package static
 Summary:	Static ibraries Objective C GNOME applications
 Summary(pl):	Biblioteki statyczne do Objective C GNOME
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -64,15 +67,13 @@ Biblioteki statyczne do Objective C GNOME.
 
 %build
 gettextize --copy --force
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
