@@ -7,7 +7,7 @@ License:	LGPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-objc/%{name}-%{version}.tar.gz
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
 Requires:	gtk+ >= 1.2.1
