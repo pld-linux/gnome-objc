@@ -1,8 +1,8 @@
 Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
-Version:	1.0.2
-Release:	4
+Version:	1.0.40
+Release:	1
 Copyright:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -11,8 +11,11 @@ Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
 Requires:	gtk+ >= 1.2.1
 BuildRequires:	gnome-libs-devel
+BuildRequires:	gettext-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
+
+%define		_prefix		/usr/X11R6
 
 %description
 Basic libraries you must have installed to use GNOME programs
@@ -61,16 +64,15 @@ Biblioteki statyczne do Objective C GNOME.
 
 %build
 gettextize --copy --force
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target_platform} \
-	--prefix=/usr/X11R6
+LDFLAGS="-s"; export LDFLAGS
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
-strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -84,15 +86,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %doc *gz
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/X11R6/bin/obgnome-config
-%attr(755,root,root) /usr/X11R6/lib/lib*.so
-%attr(755,root,root) /usr/X11R6/lib/*.sh
-/usr/X11R6/include/*
+%attr(755,root,root) %{_bindir}/obgnome-config
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/*.sh
+%{_includedir}/*
 
 %files static
-%attr(644,root,root) /usr/X11R6/lib/lib*.a
+%attr(644,root,root) %{_libdir}/lib*.a
