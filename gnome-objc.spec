@@ -1,7 +1,7 @@
 Summary:     GNOME Objective C libraries
 Name:        gnome-objc
 Version:     0.27
-Release:     3
+Release:     2
 Copyright:   LGPL
 Group:       X11/gnome
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
