@@ -2,14 +2,14 @@ Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.2
-Release:	3
+Release:	4
 Copyright:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/%{name}-%{version}.tar.gz
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
-Requires:	gtk+ = 1.2.1
+Requires:	gtk+ >= 1.2.1
 BuildPrereq:	gnome-libs-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
@@ -74,22 +74,17 @@ strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files
+%files -f gnome-objc.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
-
-%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-objc.mo
-%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-objc.mo
-%lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/gnome-objc.mo
-%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gnome-objc.mo
-%lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/gnome-objc.mo
-%lang(ru) /usr/X11R6/share/locale/ru/LC_MESSAGES/gnome-objc.mo
 
 %files devel
 %doc *gz
@@ -103,6 +98,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root) /usr/X11R6/lib/lib*.a
 
 %changelog
+* Sun Jun 06 1999 Jan Rêkorajski <baggins@pld.org.pl>
+  [1.0.2-4]
+- requires gtk+ >= 1.2.1
+- added find_lang macro
+
 * Tue Apr 27 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.0.2-3]
 - changed group in devel and static to X11/GNOME/Development/Libraries,
