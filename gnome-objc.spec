@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f gnome-objc.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
 
