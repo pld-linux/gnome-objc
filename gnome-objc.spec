@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
   subpackage,
 - added %lang macros for .mo foles,
 - added stripping shared libraries,
-- added %attr and %defattr macros in %files (allow build package from
+- added %attr and %defattr macros in %files (allows build package from
   non-root account).
 
 * Fri Mar 13 1998 Marc Ewing <marc@redhat.com>
