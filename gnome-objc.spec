@@ -11,7 +11,6 @@ Patch0:		gnome-objc-DESTDIR.patch
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
 Requires:	gtk+ = 1.2.1
-Requires:	gnome-libs = 1.0.5
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
 
