@@ -2,7 +2,7 @@ Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
-Release:	5
+Release:	6
 License:	LGPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
