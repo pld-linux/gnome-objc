@@ -1,14 +1,15 @@
 Summary:     GNOME Objective C libraries
 Name:        gnome-objc
 Version:     0.27
-Release:     1
+Release:     3
 Copyright:   LGPL
 Group:       X11/gnome
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
-Requires:    gnome-libs >= %{version}
-Icon:        foot.gif
 URL:         http://www.gnome.org/
+Icon:        foot.gif
+Requires:    gnome-libs >= %{version}
 BuildRoot:   /tmp/%{name}-%{version}-root
+Obsoletes:   gnome
 
 %description
 Basic libraries you must have installed to use GNOME programs
@@ -46,7 +47,9 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT/usr/X11R6 install
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	gnulocaledir=$RPM_BUILD_ROOT/usr/X11R6/share/locale
 
 strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
@@ -77,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Fri Sep 18 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.28-3]
+  [0.27-2]
 - added package Icon,
 - changed prefix to /usr/X11R6.
 
