@@ -1,13 +1,14 @@
 Summary:     GNOME Objective C libraries
 Name:        gnome-objc
-Version:     0.27
-Release:     2
+Version:     0.99.1
+Release:     1
 Copyright:   LGPL
 Group:       X11/gnome
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
+Patch0:      gnome-objc-DESTDIR.patch
 URL:         http://www.gnome.org/
-Icon:        foot.gif
-Requires:    gnome-libs >= %{version}
+Icon:        gnome-objc.gif
+Requires:    gnome-libs = 0.99.2
 BuildRoot:   /tmp/%{name}-%{version}-root
 Obsoletes:   gnome
 
@@ -38,18 +39,17 @@ Static libraries to develop Objective C GNOME applications.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure \
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+./configure \
 	--prefix=/usr/X11R6
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-make install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	gnulocaledir=$RPM_BUILD_ROOT/usr/X11R6/share/locale
+make install DESTDIR=$RPM_BUILD_ROOT
 
 strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
@@ -63,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755, root, root) /usr/X11R6/lib/lib*.so.*.*
+
 %lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-objc.mo
 %lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-objc.mo
 %lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/gnome-objc.mo
@@ -71,14 +72,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644, root, root, 755)
-/usr/X11R6/lib/lib*.so
-/usr/X11R6/lib/*.sh
+%attr(755, root, root) /usr/X11R6/bin/obgnome-config
+%attr(755, root, root) /usr/X11R6/lib/lib*.so
+%attr(755, root, root) /usr/X11R6/lib/*.sh
 /usr/X11R6/include/*
 
 %files static
-/usr/X11R6/lib/lib*.a
+%attr(644, root, root) /usr/X11R6/lib/lib*.a
 
 %changelog
+* Wed Jan 06 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.99.1-1]
+- added LDFLAGS="-s" to ./configure enviroment,
+- dome updates in %files.
+
 * Fri Sep 18 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.27-2]
 - added package Icon,
