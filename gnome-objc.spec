@@ -2,8 +2,8 @@ Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
-Release:	2
-Copyright:	LGPL
+Release:	3
+License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/%{name}-%{version}.tar.gz
@@ -18,18 +18,18 @@ Obsoletes:	gnome
 %define		_prefix		/usr/X11R6
 
 %description
-Basic libraries you must have installed to use GNOME programs
-that are built with Objective C.
+Basic libraries you must have installed to use GNOME programs that are
+built with Objective C.
 
-GNOME is the GNU Network Object Model Environment. That's a fancy
-name but really GNOME is a nice GUI desktop environment.  It makes
-using your computer easy, powerful, and easy to configure.
+GNOME is the GNU Network Object Model Environment. That's a fancy name but
+really GNOME is a nice GUI desktop environment. It makes using your
+computer easy, powerful, and easy to configure.
 
 %description -l pl
 Pakiet ten zawiera biblioteki Objective C do GNOME.
 
-GNOME jest graficznym inferfejsem u¿ytkownika ³atwym wkonfiguracji.
-Uczyni z twojego komputera maszynê ³atw± i przyjemn± w obs³udze.
+GNOME jest graficznym inferfejsem u¿ytkownika ³atwym wkonfiguracji. Uczyni z
+twojego komputera maszynê ³atw± i przyjemn± w obs³udze.
 
 %package devel
 Summary:	Header filesc, etc to develop Objective C GNOME applications
@@ -39,12 +39,12 @@ Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
-Libraries, include files, etc you can use to develop Objective C
-GNOME applications.
+Libraries, include files, etc you can use to develop Objective C GNOME
+applications.
 
 %description -l pl devel
-Pliki nag³ówkowe itp. Jednym s³owem wszystko czego potrzebujesz
-aby samemu tworzyæ aplikacje GNOME z u¿yciem Objective C.
+Pliki nag³ówkowe itp. Jednym s³owem wszystko czego potrzebujesz aby samemu
+tworzyæ aplikacje GNOME z u¿yciem Objective C.
 
 %package static
 Summary:	Static ibraries Objective C GNOME applications
@@ -98,5 +98,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 
 %files static
-%defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%attr(644,root,root) %{_libdir}/lib*.a
