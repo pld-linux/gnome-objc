@@ -12,7 +12,7 @@ URL:		http://www.gnome.org/
 Requires:	gtk+ >= 1.2.1
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gettext-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 
 %define		_prefix		/usr/X11R6
