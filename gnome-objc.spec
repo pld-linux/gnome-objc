@@ -68,7 +68,7 @@ Biblioteki statyczne do Objective C GNOME.
 
 %build
 gettextize --copy --force
-CC="%{__cc}"; export CC
+OBJC="%{__cc}"; export OBJC
 %configure
 %{__make}
 
