@@ -29,7 +29,7 @@ your computer easy, powerful, and easy to configure.
 %description -l pl
 Pakiet ten zawiera biblioteki Objective C do GNOME.
 
-GNOME jest graficznym inferfejsem u¿ytkownika ³atwym wkonfiguracji.
+GNOME jest graficznym interfejsem u¿ytkownika ³atwym w konfiguracji.
 Uczyni z twojego komputera maszynê ³atw± i przyjemn± w obs³udze.
 
 %package devel
