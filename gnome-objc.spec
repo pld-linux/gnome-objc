@@ -43,7 +43,7 @@ Requires:	gcc-objc
 Libraries, include files, etc you can use to develop Objective C GNOME
 applications.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe itp. Jednym s³owem wszystko czego potrzebujesz aby
 samemu tworzyæ aplikacje GNOME z u¿yciem Objective C.
 
@@ -56,7 +56,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static libraries to develop Objective C GNOME applications.
 
-%description -l pl static
+%description static -l pl
 Biblioteki statyczne do Objective C GNOME.
 
 %prep
