@@ -5,12 +5,12 @@ Version:	1.0.40
 Release:	8
 License:	LGPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-objc/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/1.0/%{name}-%{version}.tar.gz
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
 Requires:	gtk+ >= 1.2.1
-BuildRequires:	gcc-objc
 BuildRequires:	automake
+BuildRequires:	gcc-objc
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
