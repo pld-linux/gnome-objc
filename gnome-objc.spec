@@ -2,7 +2,7 @@ Summary:	GNOME Objective C libraries
 Summary(pl):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
-Release:	1
+Release:	2
 Copyright:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -89,8 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
-%doc *gz
 %defattr(644,root,root,755)
+%doc *gz
 %attr(755,root,root) %{_bindir}/obgnome-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
@@ -98,4 +98,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 
 %files static
-%attr(644,root,root) %{_libdir}/lib*.a
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
