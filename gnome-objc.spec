@@ -66,7 +66,7 @@ Biblioteki statyczne do Objective C GNOME.
 OBJC="%{__cc}"; export OBJC
 install /usr/share/automake/config.* .
 %{__gettextize}
-aclocal -I macros
+%{__aclocal} -I macros
 %configure2_13
 %{__make}
 
