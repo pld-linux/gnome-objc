@@ -11,8 +11,9 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/%{name}-%{version}.tar
 Icon:		gnome-objc.gif
 URL:		http://www.gnome.org/
 Requires:	gtk+ >= 1.2.1
-BuildRequires:	gnome-libs-devel
+BuildRequires:	gcc-objc
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 
@@ -67,7 +68,7 @@ Biblioteki statyczne do Objective C GNOME.
 
 %build
 gettextize --copy --force
-OBJC="%{__cc}"; export OBJC
+CC="%{__cc}"; export CC
 %configure
 %{__make}
 
