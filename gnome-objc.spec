@@ -8,13 +8,13 @@ Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-objc/1.0/%{name}-%{version}.tar.gz
 # Source0-md5:	5128635f4d8d143e5f9b4646456b3025
 URL:		http://www.gnome.org/
-Requires:	gtk+ >= 1.2.1
 BuildRequires:	automake
 BuildRequires:	gcc-objc
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires:	gtk+ >= 1.2.1
 Obsoletes:	gnome
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
 %description
@@ -35,7 +35,7 @@ Uczyni z twojego komputera maszynê ³atw± i przyjemn± w obs³udze.
 Summary:	Header filesc, etc to develop Objective C GNOME applications
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do Objective C GNOME
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	gcc-objc
 
 %description devel
@@ -50,7 +50,7 @@ samemu tworzyæ aplikacje GNOME z u¿yciem Objective C.
 Summary:	Static ibraries Objective C GNOME applications
 Summary(pl):	Biblioteki statyczne do Objective C GNOME
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries to develop Objective C GNOME applications.
@@ -72,7 +72,8 @@ install /usr/share/automake/config.* .
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
