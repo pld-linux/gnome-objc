@@ -1,5 +1,5 @@
 Summary:	GNOME Objective C libraries
-Summary(pl):	Biblioteki Objective C do GNOME
+Summary(pl.UTF-8):   Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
 Release:	8
@@ -25,15 +25,15 @@ GNOME is the GNU Network Object Model Environment. That's a fancy name
 but really GNOME is a nice GUI desktop environment. It makes using
 your computer easy, powerful, and easy to configure.
 
-%description -l pl
+%description -l pl.UTF-8
 Pakiet ten zawiera biblioteki Objective C do GNOME.
 
-GNOME jest graficznym interfejsem u¿ytkownika ³atwym w konfiguracji.
-Uczyni z twojego komputera maszynê ³atw± i przyjemn± w obs³udze.
+GNOME jest graficznym interfejsem uÅ¼ytkownika Å‚atwym w konfiguracji.
+Uczyni z twojego komputera maszynÄ™ Å‚atwÄ… i przyjemnÄ… w obsÅ‚udze.
 
 %package devel
 Summary:	Header filesc, etc to develop Objective C GNOME applications
-Summary(pl):	Pliki nag³ówkowe i dokumentacja do Objective C GNOME
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja do Objective C GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gcc-objc
@@ -42,20 +42,20 @@ Requires:	gcc-objc
 Libraries, include files, etc you can use to develop Objective C GNOME
 applications.
 
-%description devel -l pl
-Pliki nag³ówkowe itp. Jednym s³owem wszystko czego potrzebujesz aby
-samemu tworzyæ aplikacje GNOME z u¿yciem Objective C.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe itp. Jednym sÅ‚owem wszystko czego potrzebujesz aby
+samemu tworzyÄ‡ aplikacje GNOME z uÅ¼yciem Objective C.
 
 %package static
 Summary:	Static ibraries Objective C GNOME applications
-Summary(pl):	Biblioteki statyczne do Objective C GNOME
+Summary(pl.UTF-8):   Biblioteki statyczne do Objective C GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries to develop Objective C GNOME applications.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne do Objective C GNOME.
 
 %prep
