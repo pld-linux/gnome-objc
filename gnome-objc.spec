@@ -1,5 +1,5 @@
 Summary:	GNOME Objective C libraries
-Summary(pl.UTF-8):   Biblioteki Objective C do GNOME
+Summary(pl.UTF-8):	Biblioteki Objective C do GNOME
 Name:		gnome-objc
 Version:	1.0.40
 Release:	8
@@ -33,7 +33,7 @@ Uczyni z twojego komputera maszynę łatwą i przyjemną w obsłudze.
 
 %package devel
 Summary:	Header filesc, etc to develop Objective C GNOME applications
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do Objective C GNOME
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do Objective C GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gcc-objc
@@ -48,7 +48,7 @@ samemu tworzyć aplikacje GNOME z użyciem Objective C.
 
 %package static
 Summary:	Static ibraries Objective C GNOME applications
-Summary(pl.UTF-8):   Biblioteki statyczne do Objective C GNOME
+Summary(pl.UTF-8):	Biblioteki statyczne do Objective C GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
