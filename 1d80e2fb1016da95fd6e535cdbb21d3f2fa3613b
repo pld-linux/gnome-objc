@@ -1,0 +1,1 @@
+- pass OBJC="%{__cc}" into autoconf environment.
