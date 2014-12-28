@@ -10,7 +10,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-objc/1.0/%{name}-%{version
 URL:		http://www.gnome.org/
 BuildRequires:	automake
 BuildRequires:	gcc-objc
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-libs-devel
 Requires:	gtk+ >= 1.2.1
 Obsoletes:	gnome
